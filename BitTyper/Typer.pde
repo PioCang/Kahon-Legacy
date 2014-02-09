@@ -13,13 +13,20 @@ class Typer {
   }
   
   void draw(String s){
-    s = s.toUpperCase();
-     for(int i = 0; i < s.length(); i++){
-       draw(letter[s.charAt(i)]);
-       nextChar();
-       if(s.charAt(i)=='\t')
-         nextChar();
-     } 
+     StringTokenizer st = new StringTokenizer(s.toUpperCase()," \t\n",true);
+    while(st.hasMoreTokens()){
+       String toPrint = st.nextToken();
+        if(toPrint.equals("\n"))
+         nextLine();
+        else{
+            check(toPrint.length());
+            for(int i = 0; i < toPrint.length(); i++)
+            {
+              draw(letter[toPrint.charAt(i)]);
+              nextChar();  
+            }
+         } 
+    }
      reset();
   }
   
@@ -28,10 +35,13 @@ class Typer {
      currY = 0; 
   }
   
+  void check(int next){
+      if(padding*2/pSize + (currX+next)*6 >= width/pSize)
+         nextLine();  
+  }
+  
   void nextChar(){
      currX++; 
-     if(padding*2/pSize + (currX+1)*6 >= width/pSize)
-       nextLine();  
   }
   void nextLine(){
      currX = 0;
