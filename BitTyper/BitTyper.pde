@@ -1,14 +1,10 @@
-import java.util.*;
-
-Typer t;
 void setup() {
-  size(800,800);
-  t = new Typer();
+  size(400,400);
 }
 
 void draw() {
   background(0);
-   bitText("Hello World",00,200);
+   bitText("Hello World!",00,200);
 }
 
 
