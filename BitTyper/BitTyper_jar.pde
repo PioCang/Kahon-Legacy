@@ -80,6 +80,7 @@ void bitText(String text, int x, int y, int textWidth, int textHeight, int paddi
     String toPrint = st.nextToken();
     if (toPrint.equals("\n")) {
       currY += 5*_fontSize*_fontLine; 
+      currX = 0;
       continue;
     }
     else if (toPrint.equals(" ") || toPrint.equals("\t")) {
