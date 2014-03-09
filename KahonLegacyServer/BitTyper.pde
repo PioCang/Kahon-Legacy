@@ -68,13 +68,13 @@ void bitChar(char c, int x, int y) {
 
 
 void bitText(String text, int x, int y, int textWidth, int textHeight, int padding) {
+  if(text== null) return;
   pushMatrix();
   translate(x+padding, y+padding);
   textWidth-=padding*2;
   textHeight-=padding*2;
   int currX = 0;
   int currY = 0;
-
   StringTokenizer st = new StringTokenizer(text.toUpperCase(), " \t\n", true);
   while (st.hasMoreTokens ()) {
     String toPrint = st.nextToken();
