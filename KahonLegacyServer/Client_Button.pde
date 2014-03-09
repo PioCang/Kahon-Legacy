@@ -56,7 +56,7 @@ class Button {
     } 
     else setFontColor(0, 0, 100);
 
-    if (startGame && index!=0)
+    if (status != WAITING_FOR_PLAYERS && index!=0)
       toDisplay = name[index];
     if (index == 6 && connected == 5)
       toDisplay = "Start Game";
