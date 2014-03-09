@@ -37,10 +37,14 @@ class Button {
       else if (toDisplay == null && name[0] != null && index!=6) 
         toDisplay = "Put " + name[0] + " here?";
       else if (toDisplay != null && name[0] != null && index == 0)
-        toDisplay = "Disconnect " + toDisplay + " ?";
+        toDisplay = "Disconnect " + toDisplay + "?";
       fill(h[index], s[index]-20, b[index]+20);
     }
-    else fill(h[index], s[index], b[index]);
+    else{
+      fill(h[index], s[index], b[index]);
+      if(index==0 && toDisplay!=null)
+        toDisplay = "Connecting: " + toDisplay;  
+    }
 
     if (toDisplay == null)
       toDisplay = display[index];

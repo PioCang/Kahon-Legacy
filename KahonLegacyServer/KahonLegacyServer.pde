@@ -19,7 +19,6 @@ void setup() {
   //Get port number from config.txt
   String arr[] = loadStrings("config.txt");
   port = parseInt(arr[0].split(" ")[1]);
-  port = 5000;
   server = new Server(this, port);
 
   playerQueue = new LinkedList<Client>();
