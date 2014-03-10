@@ -15,6 +15,7 @@ int s[] = {
 int b[] = {
   100, 14, 69, 90, 71, 71, 50
 };
+
 int _width, _height;
 
 class Button {
@@ -33,7 +34,7 @@ class Button {
     if (x <= mouseX && mouseX <= x + _width && y <= mouseY && mouseY <= y + _height)
     {
       if (toDisplay != null && name[0] == null)
-        toDisplay = "Disconnect " + toDisplay + " ?";
+        toDisplay = "Disconnect " + toDisplay + "?";
       else if (toDisplay == null && name[0] != null && index!=6) 
         toDisplay = "Put " + name[0] + " here?";
       else if (toDisplay != null && name[0] != null && index == 0)
@@ -65,8 +66,10 @@ class Button {
     translate(x, y);
     rectMode(CORNER);
     noStroke();
+
     rect(0, 0, _width, _height);
     bitText(toDisplay, 20, 20);
+ 
     popMatrix();
   }
 

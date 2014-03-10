@@ -19,7 +19,7 @@ int _fontS = 0;
 int _fontB = 100;
 int _fontAlpha = 100;
 //Font size
-int _fontSize = 3;
+float _fontSize = 3;
 
 //Spacing
 float _fontLine = 1.3;
