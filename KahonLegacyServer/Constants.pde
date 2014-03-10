@@ -8,6 +8,17 @@ int SENDING_GAMEDATA = 5;
 int WAIT_FOR_TERMINALS = 6;
 int FINISHED = 7;
 
+int MOVE_LEFT = 50;
+int MOVE_UP = 51;
+int MOVE_RIGHT = 52;
+int MOVE_DOWN = 53;
+int DASH_LEFT = 1;
+int DASH_UP = 2;
+int DASH_RIGHT = 3 ;
+int DASH_DOWN = 4;
+int STOP = 0;
+int DROP_THE_LOOT = 1000;
+
 //Grammar
 String guard_credentials ="(MATT|JEREMY)";
 String theif_credentials = "(BRUNO|DOSTIN|TRESIA|TUTU)";
