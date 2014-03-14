@@ -1,5 +1,6 @@
 import processing.net.*;
 import java.util.*;
+import ddf.minim.*;
 
 //GUI Variables
 int pSize = 20;
@@ -17,8 +18,12 @@ int counter = 0;
 String command[];
 GameEngine game;
 
+//Sound
+static Minim minim;
+
+
 void setup() {
-  size(22*pSize, 30*pSize);
+  size(22*pSize, 36*pSize);
   button = new Button[7];
   _width = width-pSize*2;
   _height = 4*pSize;
@@ -32,8 +37,12 @@ void setup() {
   playerQueue = new LinkedList<Client>();
   status = WAITING_FOR_PLAYERS;
   command = new String[5];
+  
+  minim = new Minim(this);
+  frameRate(30);
+  
   for (int i = 0; i < 7; i++)
-    button[i] = new Button(pSize, pSize+_height*i, i);
+    button[i] = new Button(pSize, pSize+(_height+pSize)*i, i);
 
 }
 
